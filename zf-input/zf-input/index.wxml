@@ -1,0 +1,22 @@
+<view class="cus-input">
+  <view class="content">
+    <view class="label" wx:if="{{label.length == 0 ? false : true}}">{{label}}</view>
+    <view class="cus-input-content">
+      <input
+        class="input"
+        style="{{inputStyle}}"
+        type="{{type}}"
+        placeholder-style="{{placeholderStyle}}"
+        placeholder="{{placehold}}"
+        value="{{value}}"
+        bindinput="onInput"
+        bindblur="onBlur"
+      ></input>
+      <slot></slot>
+    </view>
+  </view>
+  <view class="errMsg" hidden="{{!showerrMsg}}">
+    <view class="label" wx:if="{{label.length == 0 ? false : true}}"></view>
+    <view class="errMsg-tip" style="{{errMsgStyle}}">{{errMsg}}</view>
+  </view>
+</view>
